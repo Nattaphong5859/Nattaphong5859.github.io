@@ -229,7 +229,6 @@ span{
 
 @media(max-width: 995px){
   .home{
-    
     margin: 5rem 4rem;
   }
   .contend h3{
@@ -331,8 +330,8 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 5rem;
+  margin-bottom: 20px;
 }
 
 .line {
@@ -449,36 +448,136 @@ h1 {
   border-radius: 50%;
 }
 
-/* สำหรับหน้าจอขนาดเล็ก (มือถือ) */
-@media (max-width: 950px) {
+
+/* การตั้งค่าสำหรับหน้าจอมือถือ */
+@media (max-width: 800px) {
   .about-me-section .container {
-    flex-direction: column;
-    padding: 10px;
+      flex-direction: column;
+      text-align: center;
   }
 
-  .about-left, .about-right {
-    text-align: center;
-    padding: 10px;
+  
+
+  .about-right {
+      padding-left: 0; /* ไม่ต้องมี padding ซ้าย */
   }
 
   .profile-pic {
-    width: 150px;
-    height: 150px;
+      width: 150px; /* ลดขนาดรูปภาพลง */
+      height: auto;
+      margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างรูปและข้อความ */
   }
 
-  .about-right h1 {
-    font-size: 24px;
+  h1 {
+      font-size: 1.5rem; /* ปรับขนาดตัวอักษรให้เล็กลงเล็กน้อย */
   }
 
-  .about-right p {
-    font-size: 16px;
+  p {
+      font-size: 1rem; /* ลดขนาดข้อความลงสำหรับมือถือ */
+      padding: 0 10px; /* เพิ่ม padding รอบๆ ข้อความ */
   }
+
   .line {
-    width: 100px; /* ปรับขนาดความกว้างของเส้น */
-    height: 5px; /* ความหนาของเส้น */
-    background-color: #8A2BE2; /* สีม่วง */
-    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
- 
+      margin: 10px auto; /* จัดให้เส้นอยู่ตรงกลาง */
   }
-  
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden; 
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 350px; 
+}
+.gallery-item:hover {
+    transform: scale(1.05) rotate(-2deg); 
+    box-shadow: 0 20px 40px #8A2BE2;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(80%) saturate(120%);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); 
+    filter: brightness(100%) saturate(140%);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.overlay p {
+  margin: 5px 0 0;
+  font-size: 12px;
+ 
+}
+
+.gallery-item:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #000000, #000000);
+  border-radius: 20px;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gallery-item:hover:before {
+  opacity: 1;
+}
+.project-container {
+  max-width: 1100px;
+  margin: 0 auto;
+} 
+
+.project-section {
+  padding: 50px 20px;
+  text-align: center;
 }
