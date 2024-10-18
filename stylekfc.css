@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    position: relative;
+    max-width: 100px;
+}
+header ul{
+    position: relative;
+    display: flex;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    display: inline-block;
+    color: #333;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-left: 40px;
+    text-decoration: none;
+}
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .textbox{
+    position: relative;
+    max-width: 600px;
+}
+.content .textbox h2{
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 00;
+}
+.content .textbox h2 span{
+    color: #ff0000;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+.content .textbox p{
+    color: #333;
+}
+.content .textbox p span{
+    color: #ff0000;
+    font-size: 1.5rem;
+}
+.content .imgbox{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 0px;
+}
+.content .imgbox img{
+    width: 100%;
+}
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f70000;
+    clip-path: circle(700px at right 800px);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: "Poppins",sans-serif;
+  }
+  html{
+    font-size: 62.5%;
+  }
+  body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color:black;
+    color: white;
+  }
+  
